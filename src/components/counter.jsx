@@ -13,18 +13,7 @@ class  Counter extends Component {
         display:'inline'
     }
     //----------------------------------------------------------------------------------------------------------------
-    render() { 
-        // console.log('props',this.props)
-        
-        // let shopp = (
-        //     <div > 
-
-                        {/* {/* {this.state.tags.length===0 && 'WE Need to create new tag!'}
-                        {this.renderTags()} */}
-                
-        //     </div>
-        // );
-        
+    render() {
         return (
             <div > 
                 {this.props.children}
@@ -32,23 +21,14 @@ class  Counter extends Component {
                 <p style={this.paraStyle}><button onClick={()=>this.props.onIncrement(this.props.counter)} className='btn btn-secondary btn-sm'>+</button></p>
                 <p style={this.paraStyle}><button onClick={()=>this.props.onDecrement(this.props.counter)} className='btn btn-secondary btn-sm'>-</button></p>
                 <p style={this.paraStyle}><button onClick={()=>this.props.onDelete(this.props.counter.id)} className='btn btn-danger btn-sm'>Delete</button></p>
-                
-                
-                {/* {shopp} */}
-                
             </div>
-           
-           );
+        );
     }
-    
     //-------------------------------------------------------------------------------------------------------------
-        
-    
     getBadgeClasses (){
         let classes = 'badge m-2 badge-';
         classes+= this.props.counter.value===0 ? 'warning' : 'primary';
         return classes;
-        
     }
     //----------------------------------------------------------------------------------------------------------------
     formatValue(){
@@ -56,19 +36,5 @@ class  Counter extends Component {
         return value === 0 ? 'Zero' : value;
     }
 }
-    //---------------------------------------------------------------------------------------------------------------
-    export default Counter;
-        
-
-//----------------------------------------------------------------------------------------------------------------------
-    // renderTags (){
-    //     if (this.state.tags.length === 0){
-    //         return <p>No tags are available!!</p>
-    //     }
-    //     return (
-    //         <ul>
-    //             {this.state.tags.map(tag => <li>{tag}</li>)}
-    //         </ul>
-    //     )
-    // }
-//----------------------------------------------------------------------------------------------------------------------
+export default Counter;
+   
